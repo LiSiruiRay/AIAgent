@@ -16,28 +16,30 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 @app.route("/", methods=("GET", "POST"))
 def index():
     if request.method == "POST":
-        days = request.form["days"]
-        budget = request.form["budget"]
-        from_l = request.form["fromlocation"]
-        to_l = request.form["tolocation"]
-        
-        # showing = str(days2) + ";;;'" + str(budget) + "---" + from_l + "000" + to_l
-        pr = generate_prompt(from_l, to_l, days, budget, "excited")
-        response = openai.Completion.create(
-            model="text-davinci-003",
-            prompt=pr,
-            temperature=0.6,
-            max_tokens=800
-        )
-        return render_template("test.html", result=response.choices[0].text)
-    
-        
+        # days = request.form["days"]
+        location_from = request.form["travel_from"]
+        location_to = request.form["travel_to"]
+        # result1 = str(days) + location_from + "--" +location_to
+        # print(result1)
+        result1 = location_from + "--" +location_to
+        print(result1)
+        # print(animal)
+        # print(type(animal))
+        # prompt = generate_prompt(animal)
+        # prompt = generate_prompt("New York", "Japan", 7, 5000, "excited")
+        # print(prompt)
+        # response = openai.Completion.create(
+        #     model="text-davinci-003",
+        #     prompt=generate_prompt("New York", "New Jersey", 2, 3000, "excited"),
+        #     temperature=0.6,
+        #     max_tokens=300
+        # )
+        # print(response.choices[0].text)
+        return redirect(url_for("index", result=result1))
 
     result = request.args.get("result")
     return render_template("index.html", result=result)
 
-# def return_to_otherpage():
-    
 
 # def generate_prompt(animal):
 #     return """Suggest three names for an animal that is a superhero.
