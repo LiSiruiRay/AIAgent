@@ -1,0 +1,33 @@
+.card-img{
+    width: 100%;
+    height: 100%;
+
+  }
+  .block{
+    background-color: rgb(146, 222, 223);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  .card{
+    left: 100px;
+  }
+
+  .card h3{
+    text-transform: uppercase;
+    color: rgb(18, 0, 0);
+  }
+  .card p{
+    line-height: 1.4em;
+  }
+  .btn btn-dark{
+    align-items: center;
+  }
+  svg {
+    height: 2em;
+    width: 2em; 
+    display: block; 
+    fill: currentcolor; 
+    color: white; 
+    font-family: "Helvetica"; 
+    font-size: 16px;
+  }
