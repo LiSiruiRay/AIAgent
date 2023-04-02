@@ -33,13 +33,13 @@
             </div>
 
             <div class = "row g-5 justify-content-evenly">
-                <div class ="col-lg-6">
+                <div class ="col-lg-10">
                     {% for key, value in data.items() %}
                       <div class = "card">
                         <div class = "row g-0">
                             <div class="col-6 col-md-5">
-
-                                <img src ="freedom-tower.jpg" class="card-img img-fluid rounded-star"/>
+{#                                {% set  %}#}
+                                <img src="{{ url_for('static', filename=filename + '/' + loop.index|string + '.png') }}" class="card-img img-fluid rounded-star" />
                             </div>
                             <div class="col-6 col-md-7">
 

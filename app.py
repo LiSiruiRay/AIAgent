@@ -36,134 +36,244 @@ def index():
         # )
 
         plan1 = """{
-"day1": {
-"location": "New York",
-"what to do": "Fly to Tokyo.",
-"cost": {
-"flight": 800,
-"activity": 0,
-"hotel": 100,
-"transportation": 30,
-"food": 50
-}
-},
-"day2": {
-"location": "Tokyo",
-"what to do": "Visit the Tsukiji Fish Market, the Meiji Shrine, and the Tokyo Tower.",
-"cost": {
-"flight": 0,
-"activity": 100,
-"hotel": 0,
-"transportation": 20,
-"food": 30
-}
-},
-"day3": {
-"location": "Tokyo",
-"what to do": "Go shopping in Harajuku and Shibuya, and visit the Tokyo National Museum.",
-"cost": {
-"flight": 0,
-"activity": 50,
-"hotel": 0,
-"transportation": 20,
-"food": 30
-}
-},
-"day4": {
-"location": "Kyoto",
-"what to do": "Take the bullet train to Kyoto. Visit the Kiyomizu-dera Temple, the Fushimi Inari Shrine, and have dinner at a traditional Kyoto restaurant.",
-"cost": {
-"flight": 150,
-"activity": 100,
-"hotel": 100,
-"transportation": 50,
-"food": 20
-}
-},
-"day5": {
-"location": "Kyoto",
-"what to do": "Visit the Kinkaku-ji Temple, the Gion district, and have lunch at a traditional tea house.",
-"cost": {
-"flight": 0,
-"activity": 50,
-"hotel": 0,
-"transportation": 20,
-"food": 30
-}
-},
-"day6": {
-"location": "Osaka",
-"what to do": "Take the train to Osaka. Visit the Osaka Castle, the Dotonbori district, and have dinner at a local restaurant.",
-"cost": {
-"flight": 50,
-"activity": 100,
-"hotel": 100,
-"transportation": 20,
-"food": 20
-}
-},
-"day7": {
-"location": "Osaka",
-"what to do": "Visit the Universal Studios Japan, ride the roller coasters, take the studio tour, and watch a show.",
-"cost": {
-"flight": 0,
-"activity": 150,
-"hotel": 0,
-"transportation": 20,
-"food": 30
-}
-}
-}"""
+                "day1": {
+                "location": "New York",
+                "what to do": "Fly to Tokyo.",
+                "cost": {
+                "flight": 800,
+                "activity": 0,
+                "hotel": 100,
+                "transportation": 30,
+                "food": 50
+                }
+                },
+                "day2": {
+                "location": "Tokyo",
+                "what to do": "Visit the Tsukiji Fish Market, the Meiji Shrine, and the Tokyo Tower.",
+                "cost": {
+                "flight": 0,
+                "activity": 100,
+                "hotel": 0,
+                "transportation": 20,
+                "food": 30
+                }
+                },
+                "day3": {
+                "location": "Tokyo",
+                "what to do": "Go shopping in Harajuku and Shibuya, and visit the Tokyo National Museum.",
+                "cost": {
+                "flight": 0,
+                "activity": 50,
+                "hotel": 0,
+                "transportation": 20,
+                "food": 30
+                }
+                },
+                "day4": {
+                "location": "Kyoto",
+                "what to do": "Take the bullet train to Kyoto. Visit the Kiyomizu-dera Temple, the Fushimi Inari Shrine, and have dinner at a traditional Kyoto restaurant.",
+                "cost": {
+                "flight": 150,
+                "activity": 100,
+                "hotel": 100,
+                "transportation": 50,
+                "food": 20
+                }
+                },
+                "day5": {
+                "location": "Kyoto",
+                "what to do": "Visit the Kinkaku-ji Temple, the Gion district, and have lunch at a traditional tea house.",
+                "cost": {
+                "flight": 0,
+                "activity": 50,
+                "hotel": 0,
+                "transportation": 20,
+                "food": 30
+                }
+                },
+                "day6": {
+                "location": "Osaka",
+                "what to do": "Take the train to Osaka. Visit the Osaka Castle, the Dotonbori district, and have dinner at a local restaurant.",
+                "cost": {
+                "flight": 50,
+                "activity": 100,
+                "hotel": 100,
+                "transportation": 20,
+                "food": 20
+                }
+                },
+                "day7": {
+                "location": "Osaka",
+                "what to do": "Visit the Universal Studios Japan, ride the roller coasters, take the studio tour, and watch a show.",
+                "cost": {
+                "flight": 0,
+                "activity": 150,
+                "hotel": 0,
+                "transportation": 20,
+                "food": 30
+                }
+                }
+                }"""
 
         plan2 = """{
-            "day1": {
-                "location": "Jersey City",
-                "what to do": "Take a helicopter ride to Liberty State Park in New Jersey",
+                "day1": {
+                "location": "New York",
+                "what to do": "Fly to Tokyo. Visit the Tokyo Tower, have lunch at a local ramen restaurant, and explore the Sensoji Temple.",
                 "cost": {
-                    "flight": 500,
-                    "activity": 0,
-                    "hotel": 200,
-                    "transportation": 0,
-                    "food": 50
+                "flight": 800,
+                "activity": 100,
+                "hotel": 150,
+                "transportation": 30,
+                "food": 50
                 }
-            },
-            "day2": {
-                "location": "New Jersey",
-                "what to do": "Go on an exciting adventure at Six Flags Great Adventure",
+                },
+                "day2": {
+                "location": "Tokyo",
+                "what to do": "Visit the Imperial Palace, the Meiji Shrine, and have dinner at a sushi restaurant.",
                 "cost": {
-                    "flight": 0,
-                    "activity": 200,
-                    "hotel": 0,
-                    "transportation": 0,
-                    "food": 50
+                "flight": 0,
+                "activity": 150,
+                "hotel": 0,
+                "transportation": 20,
+                "food": 30
                 }
-            }
-        }"""
+                },
+                "day3": {
+                "location": "Tokyo",
+                "what to do": "Visit the Tsukiji Fish Market, the Ueno Park, and have dinner at a local izakaya.",
+                "cost": {
+                "flight": 0,
+                "activity": 50,
+                "hotel": 0,
+                "transportation": 20,
+                "food": 30
+                }
+                },
+                "day4": {
+                "location": "Kyoto",
+                "what to do": "Take a bullet train to Kyoto. Visit the Fushimi Inari Shrine, the Kinkakuji Temple, and have dinner at a kaiseki restaurant.",
+                "cost": {
+                "flight": 200,
+                "activity": 100,
+                "hotel": 100,
+                "transportation": 40,
+                "food": 50
+                }
+                },
+                "day5": {
+                "location": "Kyoto",
+                "what to do": "Visit the Nijo Castle, the Kiyomizu Temple, and have dinner at a local restaurant.",
+                "cost": {
+                "flight": 0,
+                "activity": 50,
+                "hotel": 0,
+                "transportation": 20,
+                "food": 30
+                }
+                },
+                "day6": {
+                "location": "Osaka",
+                "what to do": "Take a train to Osaka. Visit the Osaka Castle, the Shitennoji Temple, and have dinner at a local restaurant.",
+                "cost": {
+                "flight": 0,
+                "activity": 100,
+                "hotel": 100,
+                "transportation": 30,
+                "food": 30
+                }
+                },
+                "day7": {
+                "location": "Osaka",
+                "what to do": "Visit the Universal Studios Japan, ride the roller coasters, take the studio tour, and watch a show. Have dinner at a local restaurant.",
+                "cost": {
+                "flight": 0,
+                "activity": 200,
+                "hotel": 0,
+                "transportation": 20,
+                "food": 30
+                }
+                }
+                }"""
 
         plan3 = """{
-            "day1": {
-                "location": "Newark",
-                "what to do": "Take a helicopter ride to Liberty State Park in New Jersey",
+                "day1": {
+                "location": "New York",
+                "what to do": "Fly to Tokyo. Visit the Tokyo Tower, have lunch at a local ramen restaurant, and explore the Sensoji Temple.",
                 "cost": {
-                    "flight": 500,
-                    "activity": 0,
-                    "hotel": 200,
-                    "transportation": 0,
-                    "food": 50
+                "flight": 800,
+                "activity": 100,
+                "hotel": 150,
+                "transportation": 30,
+                "food": 50
                 }
-            },
-            "day2": {
-                "location": "New Jersey",
-                "what to do": "Go on an exciting adventure at Six Flags Great Adventure",
+                },
+                "day2": {
+                "location": "Tokyo",
+                "what to do": "Visit the Imperial Palace, the Meiji Shrine, and have dinner at a sushi restaurant.",
                 "cost": {
-                    "flight": 0,
-                    "activity": 200,
-                    "hotel": 0,
-                    "transportation": 0,
-                    "food": 50
+                "flight": 0,
+                "activity": 150,
+                "hotel": 0,
+                "transportation": 20,
+                "food": 30
                 }
-            }
-        }"""
+                },
+                "day3": {
+                "location": "Tokyo",
+                "what to do": "Visit the Tsukiji Fish Market, the Ueno Park, and have dinner at a local izakaya.",
+                "cost": {
+                "flight": 0,
+                "activity": 50,
+                "hotel": 0,
+                "transportation": 20,
+                "food": 30
+                }
+                },
+                "day4": {
+                "location": "Kyoto",
+                "what to do": "Take a bullet train to Kyoto. Visit the Fushimi Inari Shrine, the Kinkakuji Temple, and have dinner at a kaiseki restaurant.",
+                "cost": {
+                "flight": 200,
+                "activity": 100,
+                "hotel": 100,
+                "transportation": 40,
+                "food": 50
+                }
+                },
+                "day5": {
+                "location": "Kyoto",
+                "what to do": "Visit the Nijo Castle, the Kiyomizu Temple, and have dinner at a local restaurant.",
+                "cost": {
+                "flight": 0,
+                "activity": 50,
+                "hotel": 0,
+                "transportation": 20,
+                "food": 30
+                }
+                },
+                "day6": {
+                "location": "Osaka",
+                "what to do": "Take a train to Osaka. Visit the Osaka Castle, the Shitennoji Temple, and have dinner at a local restaurant.",
+                "cost": {
+                "flight": 0,
+                "activity": 100,
+                "hotel": 100,
+                "transportation": 30,
+                "food": 30
+                }
+                },
+                "day7": {
+                "location": "Osaka",
+                "what to do": "Visit the Universal Studios Japan, ride the roller coasters, take the studio tour, and watch a show. Have dinner at a local restaurant.",
+                "cost": {
+                "flight": 0,
+                "activity": 200,
+                "hotel": 0,
+                "transportation": 20,
+                "food": 30
+                }
+                }
+                }"""
         budget = int(budget)
         budgets = [budget * 0.75, budget, budget * 1.25]
         plans = ["", "", ""]
@@ -203,7 +313,7 @@ def card_details():
     # print(all_plans)
     plan = all_plans[card_id]
     # print("------", all_plans[card_id])
-    return render_template("card_detail.html", data=plan)
+    return render_template("card_detail.html", data=plan, filename=card_id)
 
 
 # def return_to_otherpage():
