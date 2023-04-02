@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <title>OpenAI Quickstart</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='plan_card.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
 </head>
 
 <body>
@@ -11,16 +11,26 @@
 {#<pre>{{ jsonData | tojson | safe }}</pre>#}
 
   <div class="card-container">
+{#  {% for key, value in data.items() %}#}
+{#    <div class="card">#}
+{#        <img src="{{ url_for('static', filename='img_avatar.png') }}" alt="Avatar" style="width:100%">#}
+{#        <h4><b>{{ key }}</b></h4>#}
+{#        <script>#}
+{#            var jsonString = JSON.stringify({{ value|tojson }});#}
+{#            document.write(jsonString);#}
+{#        </script>#}
+{#    </div>#}
+{#  {% endfor %}#}
   {% for key, value in data.items() %}
-    <div class="card">
-        <img src="{{ url_for('static', filename='img_avatar.png') }}" alt="Avatar" style="width:100%">
-        <h4><b>{{ key }}</b></h4>
-        <script>
-            var jsonString = JSON.stringify({{ value|tojson }});
-            document.write(jsonString);
-        </script>
-    </div>
-  {% endfor %}
+  <div class="card">
+    <img src="{{ url_for('static', filename='img_avatar.png') }}" alt="Avatar" style="width:100%">
+    <h4><b>{{ key }}</b></h4>
+    <form method="POST" action="/card-details">
+      <input type="hidden" name="card_id" value="{{ key }}">
+      <button type="submit">More Details</button>
+    </form>
+  </div>
+{% endfor %}
 </div>
     </div>
 

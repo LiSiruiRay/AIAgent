@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>card detail</title>
+
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+</head>
+<body>
+    {% for key, value in data.items() %}
+  <div class="card">
+    <img src="{{ url_for('static', filename='img_avatar.png') }}" alt="Avatar" style="width:100%">
+    <h4><b>{{ key }}</b></h4>
+
+        <script>
+            var jsonString = JSON.stringify({{ value|tojson }});
+            document.write(jsonString);
+        </script>
+  </div>
+{% endfor %}
+</body>
+</html>

@@ -5,7 +5,7 @@
 import os
 import sys
 
-print("Python executable:", sys.executable)
+# print("Python executable:", sys.executable)
 
 import openai
 from flask import Flask, redirect, render_template, request, url_for, json, jsonify
@@ -13,14 +13,18 @@ from flask import Flask, redirect, render_template, request, url_for, json, json
 app = Flask(__name__)
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
+all_plans = []
+
 
 @app.route("/", methods=("GET", "POST"))
 def index():
+    global all_plans
     if request.method == "POST":
         days = request.form["days"]
         budget = request.form["budget"]
         from_l = request.form["fromlocation"]
         to_l = request.form["tolocation"]
+        # print("-----------------------Days: ", days, ", budge: ", budget, ", from: ", from_l, ", to: ", to_l)
 
         # showing = str(days2) + ";;;'" + str(budget) + "---" + from_l + "000" + to_l
         # pr = generate_prompt(from_l, to_l, days, budget, "excited")
@@ -108,6 +112,7 @@ def index():
         budget = int(budget)
         budgets = [budget * 0.75, budget, budget * 1.25]
         plans = ["", "", ""]
+
         # for i in range(3):
         #     plans[i] = openai.Completion.create(
         #         model="text-davinci-003",
@@ -129,6 +134,16 @@ def index():
     # result = request.args.get("result")
     # return render_template("index.html", result=result)
     return render_template("index.html")
+
+
+@app.route('/card-details', methods=['POST'])
+def card_details():
+    card_id = request.form['card_id']
+    # Do something with the card identifier, e.g. query the database for more details
+    # print(all_plans)
+    plan = all_plans[card_id]
+    # print("------", all_plans[card_id])
+    return render_template("card_detail.html", data=plan)
 
 
 # def return_to_otherpage():
