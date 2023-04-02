@@ -4,14 +4,15 @@
 
 import os
 import sys
+
 print("Python executable:", sys.executable)
 
-
 import openai
-from flask import Flask, redirect, render_template, request, url_for
+from flask import Flask, redirect, render_template, request, url_for, json, jsonify
 
 app = Flask(__name__)
 openai.api_key = os.getenv("OPENAI_API_KEY")
+
 
 @app.route("/", methods=("GET", "POST"))
 def index():
@@ -20,24 +21,118 @@ def index():
         budget = request.form["budget"]
         from_l = request.form["fromlocation"]
         to_l = request.form["tolocation"]
-        
-        # showing = str(days2) + ";;;'" + str(budget) + "---" + from_l + "000" + to_l
-        pr = generate_prompt(from_l, to_l, days, budget, "excited")
-        response = openai.Completion.create(
-            model="text-davinci-003",
-            prompt=pr,
-            temperature=0.6,
-            max_tokens=800
-        )
-        return render_template("test.html", result=response.choices[0].text)
-    
-        
 
-    result = request.args.get("result")
-    return render_template("index.html", result=result)
+        # showing = str(days2) + ";;;'" + str(budget) + "---" + from_l + "000" + to_l
+        # pr = generate_prompt(from_l, to_l, days, budget, "excited")
+        # response = openai.Completion.create(
+        #     model="text-davinci-003",
+        #     prompt=pr,
+        #     temperature=0.6,
+        #     max_tokens=800
+        # )
+
+        plan1 = """{
+            "day1": {
+                "location": "New York",
+                "what to do": "Take a helicopter ride to Liberty State Park in New Jersey",
+                "cost": {
+                    "flight": 500,
+                    "activity": 0,
+                    "hotel": 200,
+                    "transportation": 0,
+                    "food": 50
+                }
+            },
+            "day2": {
+                "location": "New Jersey",
+                "what to do": "Go on an exciting adventure at Six Flags Great Adventure",
+                "cost": {
+                    "flight": 0,
+                    "activity": 200,
+                    "hotel": 0,
+                    "transportation": 0,
+                    "food": 50
+                }
+            }
+        }"""
+
+        plan2 = """{
+            "day1": {
+                "location": "Jersey City",
+                "what to do": "Take a helicopter ride to Liberty State Park in New Jersey",
+                "cost": {
+                    "flight": 500,
+                    "activity": 0,
+                    "hotel": 200,
+                    "transportation": 0,
+                    "food": 50
+                }
+            },
+            "day2": {
+                "location": "New Jersey",
+                "what to do": "Go on an exciting adventure at Six Flags Great Adventure",
+                "cost": {
+                    "flight": 0,
+                    "activity": 200,
+                    "hotel": 0,
+                    "transportation": 0,
+                    "food": 50
+                }
+            }
+        }"""
+
+        plan3 = """{
+            "day1": {
+                "location": "Newark",
+                "what to do": "Take a helicopter ride to Liberty State Park in New Jersey",
+                "cost": {
+                    "flight": 500,
+                    "activity": 0,
+                    "hotel": 200,
+                    "transportation": 0,
+                    "food": 50
+                }
+            },
+            "day2": {
+                "location": "New Jersey",
+                "what to do": "Go on an exciting adventure at Six Flags Great Adventure",
+                "cost": {
+                    "flight": 0,
+                    "activity": 200,
+                    "hotel": 0,
+                    "transportation": 0,
+                    "food": 50
+                }
+            }
+        }"""
+        budget = int(budget)
+        budgets = [budget * 0.75, budget, budget * 1.25]
+        plans = ["", "", ""]
+        # for i in range(3):
+        #     plans[i] = openai.Completion.create(
+        #         model="text-davinci-003",
+        #         prompt=generate_prompt(from_l, to_l, days, budgets[i], "excited"),
+        #         temperature=0.6,
+        #         max_tokens=800
+        #     )
+        plans[0] = plan1
+        plans[1] = plan2
+        plans[2] = plan3
+        all_plans = {"plan1": json.loads(plans[0]), "plan2": json.loads(plans[1]), "plan3": json.loads(plans[2])}
+        # return render_template("plan_card.html", result=response.choices[0].text)
+        d_serialzed = json.dumps(all_plans)
+        print(type(d_serialzed))
+        d_jsonified = jsonify(all_plans)
+        return render_template("plan_card.html", jsonData=all_plans)
+        # return jsonify(all_plans)
+
+    # result = request.args.get("result")
+    # return render_template("index.html", result=result)
+    return render_template("index.html")
+
 
 # def return_to_otherpage():
-    
+
 
 # def generate_prompt(animal):
 #     return """Suggest three names for an animal that is a superhero.
@@ -54,7 +149,7 @@ def index():
 # Ray
 # Created By: 2023-04-01
 # Description: 
-def generate_prompt(location_from, location_to, days, budget, theme = "relax"):
+def generate_prompt(location_from, location_to, days, budget, theme="relax"):
     """function for generating prompts for GPT
 
     Args:
@@ -207,7 +302,9 @@ def generate_prompt(location_from, location_to, days, budget, theme = "relax"):
 
 """
 
-    formate_prompt = "Give in the form of json file: \{\'day\': \{which day}, 'location': \{location from you}, 'what to do': \{what to do}, 'cost': \{cost details}}. Give me a " + str(days) + " day plane from " + location_from + " to " + location_to +", with "+ str(budget) + " dollar budget, including the transportation, flight, hotel. Generate the plan based on the theme of " + theme
+    formate_prompt = "Give in the form of json file: \{\'day\': \{which day}, 'location': \{location from you}, 'what to do': \{what to do}, 'cost': \{cost details}}. Give me a " + str(
+        days) + " day plane from " + location_from + " to " + location_to + ", with " + str(
+        budget) + " dollar budget, including the transportation, flight, hotel. Generate the plan based on the theme of " + theme
     first_sentence = "The following conversation is bewtween a travel agent and a person who wants to travel, the travel agent will give a plan that meet the requirement for location, price, and day length. The price must the precise with customer's budget."
     templates = f"""{first_sentence}
     
