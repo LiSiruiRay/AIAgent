@@ -113,17 +113,22 @@ def index():
         budgets = [budget * 0.75, budget, budget * 1.25]
         plans = ["", "", ""]
 
-        # for i in range(3):
-        #     plans[i] = openai.Completion.create(
-        #         model="text-davinci-003",
-        #         prompt=generate_prompt(from_l, to_l, days, budgets[i], "excited"),
-        #         temperature=0.6,
-        #         max_tokens=800
-        #     )
-        plans[0] = plan1
-        plans[1] = plan2
-        plans[2] = plan3
+        for i in range(3):
+            plans[i] = openai.Completion.create(
+                model="text-davinci-003",
+                prompt=generate_prompt(from_l, to_l, days, budgets[i], "excited"),
+                temperature=0.6,
+                max_tokens=800
+            ).choices[0].text
+            print(plans[i])
+            print(type(plans[i]))
+
+        # plans[0] = plan1
+        # plans[1] = plans[0]
+        # plans[2] = plans[0]
+
         all_plans = {"plan1": json.loads(plans[0]), "plan2": json.loads(plans[1]), "plan3": json.loads(plans[2])}
+        print(all_plans)
         # return render_template("plan_card.html", result=response.choices[0].text)
         d_serialzed = json.dumps(all_plans)
         print(type(d_serialzed))
@@ -260,57 +265,57 @@ def generate_prompt(location_from, location_to, days, budget, theme="relax"):
     output2 = """{
     "day1": {
         "location": "New York",
-        "what to do": "Fly to Los Angeles",
+        "what to do": "Fly to San Francisco. Take a cable car ride, visit the Golden Gate Bridge, and have a seafood dinner at Fisherman's Wharf.",
         "cost": {
             "flight": 300,
-            "activity": 50,
+            "activity": 100,
             "hotel": 100,
-            "transportation": 0,
+            "transportation": 30,
             "food": 50
         }
     },
     "day2": {
-        "location": "Los Angeles",
-        "what to do": "Visit Santa Monica Beach and go for a relaxing walk on the pier",
+        "location": "San Francisco",
+        "what to do": "Take a ferry to Alcatraz Island, learn about its history, and enjoy the view. Have lunch at Chinatown and visit the Coit Tower.",
         "cost": {
             "flight": 0,
-            "activity": 0,
-            "hotel": 100,
-            "transportation": 0,
-            "food": 50
+            "activity": 150,
+            "hotel": 0,
+            "transportation": 20,
+            "food": 30
         }
     },
     "day3": {
-        "location": "Los Angeles",
-        "what to do": "Spend a day exploring Griffith Park and the Griffith Observatory",
+        "location": "San Francisco",
+        "what to do": "Visit the San Francisco Museum of Modern Art, have lunch at the Ferry Building Marketplace, and go on a hike in the Golden Gate Park.",
         "cost": {
             "flight": 0,
-            "activity": 20,
+            "activity": 50,
             "hotel": 0,
-            "transportation": 0,
-            "food": 40
+            "transportation": 20,
+            "food": 30
         }
     },
     "day4": {
         "location": "Los Angeles",
-        "what to do": "Visit the Getty Center for some art and culture",
+        "what to do": "Fly to Los Angeles. Visit the Hollywood Walk of Fame, the Griffith Observatory, and have dinner at In-N-Out Burger.",
         "cost": {
-            "flight": 0,
-            "activity": 20,
-            "hotel": 0,
-            "transportation": 0,
-            "food": 40
+            "flight": 300,
+            "activity": 100,
+            "hotel": 100,
+            "transportation": 30,
+            "food": 20
         }
     },
     "day5": {
         "location": "Los Angeles",
-        "what to do": "Fly back to New York",
+        "what to do": "Spend the day at Universal Studios Hollywood, ride the roller coasters, take the studio tour, and watch a show. Have dinner at Pink's Hot Dogs.",
         "cost": {
-            "flight": 300,
-            "activity": 0,
+            "flight": 0,
+            "activity": 200,
             "hotel": 0,
-            "transportation": 0,
-            "food": 0
+            "transportation": 20,
+            "food": 30
         }
     }
 }
