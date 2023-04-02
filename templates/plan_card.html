@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>TripGenie</title>
+    <link rel="stylesheet" type="text/css" href="plan_card.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='plan_card.css') }}" />
+    <link rel="stylesheet" type="text/css" href="./fullpage/fullpage.css" />
+    <script type="text/javascript" src="./fullpage/fullpage.js"></script>
+</head>
+
+<body class="background_img">
+    <header className="App-header">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <div class="collapse navbar-collapse">
+
+            <h3 style="color:white">Wishlist</h3>            
+          </div>
+        </nav>
+    </header>
+ 
+        <pre>{{ jsonData | tojson | safe }}</pre>
+        <div class="plan-container" id="fullpage">
+            <div class="section" id="plan1">
+                <div class="col-container">
+                    <div class="col">
+                        <h2>Plan 1</h2>
+                    </div>
+                    <!-- {% for key, value in data.items() %} -->
+                    <div class="col">
+                        <h2 id="price">Total Price: $</h2>
+                    </div>
+                    <div class="col">
+                        <a href="#detail_card" class="btn-main">More Details</a>
+                    </div>
+                </div>
+
+                <script>
+                var jsonString = JSON.stringify({{ value|tojson }});
+                    document.write(jsonString);
+                </script>
+            </div>
+
+            <div class="section" id="plan2">
+                <div class="col-container">
+                    <div class="col">
+                        <h2>Plan 2</h2>
+                    </div>
+                    <!-- {% for key, value in data.items() %} -->
+                    <div class="col">
+                        <h2 id="price">Total Price: $</h2>
+                    </div>
+                    <div class="col">
+                        <a href="#detail_card" class="btn-main">More Details</a>
+                    </div>
+                </div>
+
+                <script>
+                var jsonString = JSON.stringify({{ value|tojson }});
+                    document.write(jsonString);
+                </script>
+            </div>
+            <div class="section" id="plan3">
+                <div class="col-container">
+                    <div class="col">
+                        <h2>Plan 3</h2>
+                    </div>
+                    <!-- {% for key, value in data.items() %} -->
+                    <div class="col">
+                        <h2 id="price">Total Price: $</h2>
+                    </div>
+                    <div class="col">
+                        <a href="#detail_card" class="btn-main">More Details</a>
+                    </div>
+                </div>
+
+                <script>
+                var jsonString = JSON.stringify({{ value|tojson }});
+                    document.write(jsonString);
+                </script>
+            </div>
+        </div>
+    
+        <!-- // <div class="plan-card">
+            //     <img src="{{ url_for('static', filename='img_avatar.png') }}" alt="Avatar" style="width:100%">
+            //     <h4><b>{{ key }}</b></h4>
+            //     <form method="POST" action="/card-details">
+            //     <input type="hidden" name="card_id" value="{{ key }}">
+            //     <button type="submit">More Details</button>
+            //     </form>
+            // </div> 
+            </div>
+        </div>-->
+        
+
+    <script>
+        new fullpage("#fullpage", {
+            licenseKey: '',
+            sectionsColor: ['#FFFFFF','#FFFFFF','#FFFFFF'],
+            navigation: true,
+            scrollingSpeed: 1000
+        })
+
+    </script>
+
+</body>
+</html>

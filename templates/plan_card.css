@@ -1,0 +1,160 @@
+html, body {width: 100%; height: 100%;}
+
+.content{
+    height: 100vh;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+h1 {
+  display: block;
+  font-size: 2em;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-weight: bold;
+  font-size: 48px;
+  color: white;
+}
+
+h2 {
+  font-size: 2.75em;
+  font-weight: bold;
+  margin: 15px;
+  color:#8f1aa4;
+}
+
+h3 {
+  font-size: 1.75em;
+  color:#8f1aa4;
+  padding: 20px;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top:0;
+    left: 0;
+    background-color: #8f1aa4;
+    color: white;
+    padding: 0 0 0 2em;
+    z-index: 1;
+}
+
+/* nav li{
+    color: #fff;
+    font-weight: 600;
+    font-size: 12px;
+    display: inline-block;
+    width: 80px;
+} */
+
+nav {
+  width: 100%;
+  max-height: fit-content;
+}
+
+.section{
+    width: 100%;
+}
+
+.col {
+    text-align: center;
+    display: inline-block;
+    width: 350px;
+    padding: 0 20px;
+    /* height: 200px; */
+}
+
+.p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 0 20px;
+    margin-bottom: 20px;
+}
+
+.a {
+    background-color: white;
+    color: black;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    font-size: 1.75em;
+    letter-spacing: 1.3px;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 2px solid black; 
+}
+
+.container {
+    display: inline-block;
+  /* display: flex; */
+    justify-content: space-around;
+    align-items: center;
+  }
+
+.btn-main {
+    background-color: #8f1aa4;
+    color: #fff;
+    font-weight: 600;
+    font-size: 2em;
+    letter-spacing: 1.3px;
+    padding: 20px 50px;
+    text-decoration: none;
+    opacity: 0.7;
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+.btn-main:hover{
+    opacity: 1;
+}
+
+.col-container{
+    border: #8f1aa4;
+    border-radius: 5%;
+}
+
+#plan1 {
+    /* background-color: black; */
+    background-image: url("./japan1.jpg");
+    /* -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover; */
+    background-size: cover;
+}
+
+#plan2 {
+    /* background-color: black; */
+    background-image: url("./japan2.jpg");
+    /* -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover; */
+    background-size: cover;
+}
+
+#plan3 {
+    /* background-color: black; */
+    background-image: url("./japan3.jpg");
+    /* -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover; */
+    background-size: cover;
+}
