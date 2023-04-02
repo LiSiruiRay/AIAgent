@@ -123,7 +123,7 @@ def index():
         d_serialzed = json.dumps(all_plans)
         print(type(d_serialzed))
         d_jsonified = jsonify(all_plans)
-        return render_template("plan_card.html", jsonData=all_plans)
+        return render_template("plan_card.html", data=all_plans)
         # return jsonify(all_plans)
 
     # result = request.args.get("result")

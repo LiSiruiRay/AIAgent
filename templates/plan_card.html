@@ -8,23 +8,20 @@
 
 <body>
   <p>This is the plan</p>
-<pre>{{ jsonData | tojson | safe }}</pre>
+{#<pre>{{ jsonData | tojson | safe }}</pre>#}
 
   <div class="card-container">
-      {% for key, value in data.items() %}
-        <div class="card">
-          <h2>{{ key }}</h2>
-          <p>{{ value }}</p>
-        </div>
-      {% endfor %}
+  {% for key, value in data.items() %}
+    <div class="card">
+        <img src="{{ url_for('static', filename='img_avatar.png') }}" alt="Avatar" style="width:100%">
+        <h4><b>{{ key }}</b></h4>
+        <script>
+            var jsonString = JSON.stringify({{ value|tojson }});
+            document.write(jsonString);
+        </script>
+    </div>
+  {% endfor %}
+</div>
     </div>
 
-<div class="card">
-  <img src="{{ url_for('static', filename='img_avatar.png') }}"" alt="Avatar" style="width:100%">
-{#    <img src="{{ url_for('static', filename='dog.png') }}" class="icon" />#}
-  <div class="container">
-    <h4><b>John Doe</b></h4>
-    <p>Architect & Engineer</p>
-  </div>
-</div>
 </body>
