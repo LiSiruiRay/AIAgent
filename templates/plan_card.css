@@ -36,12 +36,12 @@ h2 {
   font-size: 2.75em;
   font-weight: bold;
   margin: 15px;
-  color:rgb(135, 79, 226);
+  color:#8f1aa4;
 }
 
 h3 {
   font-size: 1.75em;
-  color:rgb(135, 79, 226);
+  color:#8f1aa4;
   padding: 20px;
 }
 
@@ -50,7 +50,7 @@ header {
     width: 100%;
     top:0;
     left: 0;
-    background-color:rgb(135, 79, 226);
+    background-color: #8f1aa4;
     color: white;
     padding: 0 0 0 2em;
     z-index: 1;
@@ -69,12 +69,15 @@ nav {
   max-height: fit-content;
 }
 
+.section{
+    width: 100%;
+}
 
 .col {
     text-align: center;
     display: inline-block;
-    width: auto;
-    padding: 20px;
+    width: 350px;
+    padding: 0 20px;
     /* height: 200px; */
 }
 
@@ -108,8 +111,7 @@ nav {
   }
 
 .btn-main {
-    background-color:rgb(135, 79, 226);
-
+    background-color: #8f1aa4;
     color: #fff;
     font-weight: 600;
     font-size: 2em;
@@ -125,31 +127,14 @@ nav {
     opacity: 1;
 }
 
-.detail-btn {
-    background-color:rgb(135, 79, 226);
-
-    color: #fff;
-    font-weight: 600;
-    font-size: 2em;
-    letter-spacing: 1.3px;
-    padding: 20px 50px;
-    text-decoration: none;
-    opacity: 0.7;
-    transition: 0.3s;
-    border-radius: 5px;
-}
-
-.detail-btn:hover{
-    opacity: 1;
-}
-
 .col-container{
+    border: #8f1aa4;
     border-radius: 5%;
 }
 
 #plan1 {
     /* background-color: black; */
-    background-image: linear-gradient(to left, transparent 0%, black 100%), url("japan1.jpg");
+    background-image: url("./japan1.jpg");
     /* -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover; */
@@ -158,7 +143,7 @@ nav {
 
 #plan2 {
     /* background-color: black; */
-    background-image: linear-gradient(to left, transparent 0%, black 100%), url("japan2.jpg");
+    background-image: url("./japan2.jpg");
     /* -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover; */
@@ -167,7 +152,7 @@ nav {
 
 #plan3 {
     /* background-color: black; */
-    background-image: linear-gradient(to left, transparent 0%, black 100%), url("japan3.jpg");
+    background-image: url("./japan3.jpg");
     /* -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover; */

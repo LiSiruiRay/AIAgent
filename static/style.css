@@ -1,0 +1,118 @@
+landing page css
+html {
+  scroll-behavior: smooth;
+}
+
+svg {
+  height: 2em;
+  width: 2em;
+  display: block;
+  fill: currentcolor;
+  color: white;
+  font-family: "Helvetica";
+  font-size: 16px;
+}
+
+section {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#sec1 {
+  background-color: rgb(135, 79, 226);
+  position: relative;
+  text-align: center;
+}
+
+#sec2 {
+  background-color: aliceblue;
+}
+
+.container mt-3 rounded {
+  margin: 150px;
+  max-width: 420px;
+  padding: 30px 30px 60px 30px;
+  background-color: white;
+  font-family: "Helvetica";
+  font-weight: 600;
+  color: #484848
+}
+
+
+.form-group {
+  font-size: "small";
+}
+
+.btn btn-primary btn-lg {
+  float: right
+}
+
+h1 {
+  display: block;
+  font-size: 2em;
+  margin-block-start: 2em;
+  margin-block-end: 3em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-family: Georgia, serif;
+  font-weight: bold;
+  font-size: 48px;
+  color: rgb(252, 210, 210);
+  text-align: center;
+  justify-content: center;
+}
+
+h3 {
+  color: rgb(255, 255, 255);
+}
+
+
+
+.h-search-form {
+  width: 100%;
+  position: relative;
+}
+
+.h-search-form input {
+  width: 100%;
+  padding: 0 30px;
+  border-radius: 50px;
+  border: none;
+  font-weight: 600;
+  font-size: 16px;
+  text-transform: capitalize;
+  position: relative;
+  color: beige;
+  height: 70px;
+}
+
+.h-search-form button {
+  position: absolute;
+  right: 6px;
+  height: 60px;
+  border: none;
+  color: bisque;
+  background: rgb(135, 79, 226);
+  top: 5px;
+  border-radius: 50px;
+  width: 100px;
+}
+
+.h-search-form button::hover {
+  background: #732ab2;
+}
+.left {
+  margin-right: 0%; /* or any desired amount of margin */
+  margin-left: -40%;
+
+}
+.right{
+  margin-right: -20%;
+}
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+}

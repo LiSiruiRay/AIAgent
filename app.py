@@ -14,11 +14,22 @@ app = Flask(__name__)
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 all_plans = []
+days = 0
+budget = 0
+from_l = ""
+to_l = ""
 
 
 @app.route("/", methods=("GET", "POST"))
 def index():
     global all_plans
+    global days
+    global budget
+    global from_l
+    global to_l
+    headers = request.headers
+    print(headers)
+    print("0000", request.args)
     if request.method == "POST":
         days = request.form["days"]
         budget = request.form["budget"]
@@ -298,7 +309,7 @@ def index():
         d_serialzed = json.dumps(all_plans)
         print(type(d_serialzed))
         d_jsonified = jsonify(all_plans)
-        return render_template("plan_card.html", data=all_plans)
+        return render_template("plan_card.html", budget0=budgets[0], budget1=budgets[1], budget2=budgets[2], plandata=plans)
         # return jsonify(all_plans)
 
     # result = request.args.get("result")
